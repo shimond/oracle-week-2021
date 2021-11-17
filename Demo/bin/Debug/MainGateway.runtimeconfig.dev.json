@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\Shimo\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Shimo\\.nuget\\packages"
-    ]
-  }
-}
