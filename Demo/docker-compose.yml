@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  maingateway:
+    image: ${DOCKER_REGISTRY-}maingateway
+    build:
+      context: .
+      dockerfile: MainGateway/Dockerfile
+    ports:
+      - "2586:80"
+  catalog:
+    image: ${DOCKER_REGISTRY-}catalog
+    build:
+      context: .
+      dockerfile: Catalog/Dockerfile
+
+
+  streamservice:
+    image: ${DOCKER_REGISTRY-}streamservice
+    build:
+      context: .
+      dockerfile: StreamService/Dockerfile
+

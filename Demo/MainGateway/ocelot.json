@@ -1,0 +1,55 @@
+{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/v1/catalog/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog",
+          "Port": 80
+        }
+      ],
+      "SwaggerKey": "catalog-api-swagger"
+    },
+    {
+      "UpstreamPathTemplate": "/api/v1/streaming/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/Video/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "streamservice",
+          "Port": 80
+        }
+      ],
+      "SwaggerKey": "streaming-video-swagger"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "streaming-video-swagger",
+      "Config": [
+        {
+          "Name": "Streaming API",
+          "Version": "v1",
+          "Url": "http://streamservice/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "catalog-api-swagger",
+      "Config": [
+        {
+          "Name": "Catalog API",
+          "Version": "v1",
+          "Url": "http://catalog/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000"
+  }
+}

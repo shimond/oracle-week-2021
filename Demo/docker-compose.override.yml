@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  maingateway:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    #ports:
+    #  - "2586:80"
+
+  catalog:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    #ports:
+    #  - "80"
+
+
+  streamservice:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    #ports:
+    #  - "80"
+
